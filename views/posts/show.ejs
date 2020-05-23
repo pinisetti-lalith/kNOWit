@@ -1,0 +1,59 @@
+<%- include ("../partials/header") %>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+          
+         </div> 
+        <div class="col-md-8">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= posts.img %>">
+                <div class="caption-full">
+                    <h4><a><%=posts.name%></a></h4>
+                    <p><%= posts.description %></p>
+					<p><i> Posted by <%= posts.author.username %></i></p>
+					<% if( currentUser && posts.author.id.equals(currentUser._id)){ %>
+					<a class="btn btn-primary" href="/posts/<%= posts._id%>/edit">Edit Post  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+					<form id="delete" action="/posts/<%=posts._id%>?_method=DELETE"   method="POST">
+						<button class="btn btn-danger">
+							Delete Post  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>	
+					<% } %>	
+						<div class="text-right" class="back">
+                    <a  href="/posts">Back to Posts..</a>
+                       </div>
+					</form>
+                </div>
+            </div>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success" href="/posts/<%= posts._id %>/comments/new">Add New Comment  <span class="glyphicon glyphicon-send" aria-hidden="true"></span></a>
+                </div>
+                <hr>
+                <% posts.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%= comment.author.username %></strong>
+						
+                            <p>
+                                <%= comment.text %> 
+                            </p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+		 <div class="col-md-2">
+           
+         </div>
+    </div>
+</div>
+
+
+
+<%- include ("../partials/footer") %>
+
+
+
+
