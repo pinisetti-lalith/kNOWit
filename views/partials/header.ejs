@@ -7,7 +7,7 @@
 </head>
 <body>
 	
-<nav class="navbar navbar-default" >
+<nav class="navbar navbar-inverse" >
   <div class="container-fluid">
     <div class="navbar-header">
 		 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -19,13 +19,13 @@
       <a class="navbar-brand" href="/" style="color:white"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>  kNOWit!</a>
     </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav  nav-pills  navbar-right">
 		 <% if(!currentUser){ %>
-                        <li><a href="/login"  style="color:white"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Login</a></li>
-                        <li><a href="/register" style="color:white"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Sign Up</a></li>
+                        <li role="presentation"><a href="/login"  ><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Login</a></li>
+                        <li role="presentation"><a href="/register" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Sign Up</a></li>
              <% } else { %>   
-                        <li><a href="#" style="color:white">  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>Signed in as <%= currentUser.username %></a></li>
-                        <li><a href="/logout" style="color:white">Logout  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+                        <li role="presentation" ><a href="#" >  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>Signed in as <%= currentUser.username %></a></li>
+                        <li role="presentation"><a href="/logout" >Logout  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                    <% } %>
 		</ul>
     </div>

@@ -52,3 +52,7 @@ app.use(authRoutes);
 
 
 app.listen(process.env.PORT, process.env.IP);
+
+// app.listen(3000, function(req,res){
+// 	console.log("Server is running");
+// });
