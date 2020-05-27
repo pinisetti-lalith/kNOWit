@@ -23,7 +23,11 @@ body{
 }
 
 .navbar{
-	background-color: rgba(19, 60, 75, 0.664);
+	 overflow: hidden;
+	background-color: rgb(19, 60, 75);
+	
+	 top: 0;
+  width: 100%;
 }
 
 .nav :hover{
