@@ -45,6 +45,7 @@ router.post("/",function(req,res){
 	
 });
 
+
 router.get("/new",isLoggedIn,function(req,res){
 	 res.render("posts/new");
 });
